@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/SiteCourses_war/signUp">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/SiteCourses_war/signIn">SignIn</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1>Регистрация</h1>
+    <form action="/SiteCourses_war/signUp" method="post">
+        <label class="form-label">First Name</label>
+        <input  type="text" name="firstName" placeholder="FirstName" class="form-control">
+        <br>
+        <label class="form-label">Last Name</label>
+        <input type="text" name="lastName" placeholder="LastName" class="form-control">
+        <br>
+        <label class="form-label">Email</label>
+        <input type="email" name="email" placeholder="Email" class="form-control">
+        <br>
+        <label class="form-label">Password</label>
+        <input type="password" name="password" placeholder="Password" class="form-control">
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+</body>
+</html>
