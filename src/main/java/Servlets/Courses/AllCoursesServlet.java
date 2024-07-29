@@ -30,7 +30,6 @@ public class AllCoursesServlet extends HttpServlet {
         request.getRequestDispatcher("jsp/allCourses.jsp").forward(request,response);
     }
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }

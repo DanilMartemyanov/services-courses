@@ -44,7 +44,7 @@ public class SignUpServlet extends HttpServlet {
             request.getRequestDispatcher("html/exception.html").forward(request,response);
         }else{
             signUpService.signUp(signUpForm);
-            request.getRequestDispatcher("jsp/indexUser.jsp").forward(request,response);
+            request.getRequestDispatcher("html/forms/signIn.html").forward(request,response);
 
         }
     }

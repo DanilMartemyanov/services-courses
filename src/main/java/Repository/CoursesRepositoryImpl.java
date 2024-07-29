@@ -34,7 +34,7 @@ public class CoursesRepositoryImpl implements CoursRepository {
     //language=sql
     private static final String ADD_USER_COURSES ="insert into courses_user(user_id,name_courses) values(?,?)";
     //language=sql
-    private static final String FIND_COURSES_USER ="select * from courses_user where id = ?";
+    private static final String FIND_COURSES_USER ="select * from courses_user where user_id = ?";
     @Override
     public boolean saveCourses(Cours courses) {
         try {
@@ -50,7 +50,6 @@ public class CoursesRepositoryImpl implements CoursRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
@@ -135,9 +134,11 @@ public class CoursesRepositoryImpl implements CoursRepository {
             ResultSet resultSet  = preparedStatement.executeQuery();
             while (resultSet.next()){
                 UserCourses userCours = UserCourses.builder()
+                        .courses(resultSet.getString("user_id"))
                         .nameCourses(resultSet.getString("name_courses"))
                         .build();
                 userCourses.add(userCours);
+                System.out.println(userCours.getNameCourses());
             }
             return userCourses;
         } catch (SQLException e) {

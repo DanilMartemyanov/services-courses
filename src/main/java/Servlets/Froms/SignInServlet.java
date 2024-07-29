@@ -45,7 +45,6 @@ public class SignInServlet extends HttpServlet {
          if (id!=0){
              HttpSession session = request.getSession(true);
              session.setAttribute("authorization" , true);
-             session.setMaxInactiveInterval(60*3600);
              session.setAttribute("email", email);
              session.setAttribute("id" , id);
              session.setAttribute("role" , role);

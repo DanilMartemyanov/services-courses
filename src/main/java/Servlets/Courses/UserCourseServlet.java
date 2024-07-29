@@ -31,7 +31,11 @@ public class UserCourseServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        int id  = (int) session.getAttribute("id");
+        List<UserCourses> userCourses = coursService.findUserCourses(id);
+        request.setAttribute("userCourses",userCourses);
+        request.getRequestDispatcher("jsp/userCourses.jsp").forward(request,response);
     }
 }
